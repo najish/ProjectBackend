@@ -1,0 +1,10 @@
+.content {
+    border:2px solid red;
+    background-color:yellow;
+    justify-content: center;
+    align-items: center;
+}
+.content h1 {
+    color:red;
+    text-align: center;
+}
