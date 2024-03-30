@@ -1,6 +1,12 @@
 const router = require('express').Router()
 const User = require('../models/user.js')
-
+const session = require('express-session')
+sessionOption = {
+    secret:'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+    name: 'userId',
+}
 router.get('/',async (req,res) => {
     try {
         const users = await User.findAll()
