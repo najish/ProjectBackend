@@ -40,10 +40,11 @@ router.get('/:userId',async (req,res) => {
 
 
 router.post('/',async (req,res) => {
+
     try {
         console.log(req.body)
         const data = req.body
-        const user = User.create(data)
+        const user = await User.create(data)
         if(user) return res.send('user created')
         throw new Error('failed to created a recored: user')   
     } catch(err) {
