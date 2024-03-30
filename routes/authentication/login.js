@@ -1,8 +1,12 @@
 const router = require('express').Router()
 const sessoin = require('express-session')
-router.post('/',(req,res) => {
-    console.log('middleware2');
-    res.send('middleware2');
+
+const User = require('../../models/user.js')
+
+router.post('/',async (req,res) => {
+    console.log(req.body)
+    
+    res.send('login post method')
 })
 
 

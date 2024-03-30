@@ -38,15 +38,6 @@ app.get('/',(req,res) => {
     return res.send('Hello from projectbackend')
 })
 
-// app.post('/login',(req,res,next) => {
-//     console.log('middleware1');
-//     next()
-// },(req,res,next) => {
-//     console.log('middleware2')
-//     next()
-// },(req,res) => {
-//     return res.send('user logged in')
-// })
 
 
 
