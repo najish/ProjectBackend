@@ -16,13 +16,6 @@ router.get('/:userId',async (req,res) => {
     try {
         const userId = req.params.userId
         console.log(userId)
-        // const user = await User.findByPk(userId)
-        // if(user) {
-        //     console.log('yes')
-        //     return res.send(user)
-        // }else {
-        //     throw new Error('User Not Found')
-        // }
 
         User.findByPk(userId).then((data) => {
             if(data) {
