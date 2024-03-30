@@ -3,6 +3,7 @@
     background-color:yellow;
     justify-content: center;
     align-items: center;
+    background-image: url('../../assets/images/formImage.jpeg');
 }
 .content h1 {
     color:red;

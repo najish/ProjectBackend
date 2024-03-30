@@ -3,6 +3,7 @@ import './SignUp.css'
 
 function SignUp() {
 
+    const [sesstionData , setSessionData] = useState(null)
     const [formData, setFormData] = useState({
         username: '',
         name: '',
@@ -26,8 +27,22 @@ function SignUp() {
         event.preventDefault()
         console.log(formData)
 
-        const {name, username, email, password} = formData;
+        fetch('http://localhost:3000/user',{
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+        .catch(err => console.error(err))
         
+
+        console.log(formData)
+
 
     }
 

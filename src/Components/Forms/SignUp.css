@@ -31,4 +31,8 @@ a[href='#']:hover {
     color:black;
 }
 
+a[href='#']:active {
+    border:2px solid yellow;
+}
+
 
