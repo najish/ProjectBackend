@@ -1,6 +1,9 @@
 const router = require('express').Router()
 const User = require('../models/user.js')
 const session = require('express-session')
+const data = require('../models/dummy.js')
+const bcrypt = require('bcrypt')
+
 sessionOption = {
     secret:'keyboard cat',
     resave: false,
@@ -48,8 +51,11 @@ router.get('/:userId',async (req,res) => {
 router.post('/',async (req,res) => {
 
     try {
-        console.log(req.body)
         const data = req.body
+        const {password} = data
+        const salt = bcrypt.genSaltSync(10)
+        const hash = await bcrypt.hashSync(password,salt)
+        data.password = hash
         const user = await User.create(data)
         if(user) return res.send('user created')
         throw new Error('failed to created a recored: user')   
@@ -59,6 +65,8 @@ router.post('/',async (req,res) => {
     }
     
 })
+
+
 
 
 module.exports = router

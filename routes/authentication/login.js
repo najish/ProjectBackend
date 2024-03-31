@@ -1,12 +1,21 @@
 const router = require('express').Router()
-const sessoin = require('express-session')
 
 const User = require('../../models/user.js')
 
 router.post('/',async (req,res) => {
-    console.log(req.body)
-    
-    res.send('login post method')
+    try {
+        const {username, password} = req.body
+        console.log(username,password)
+        let x = '' 
+
+        if(x)
+            console.log(x)
+        else 
+            console.log('user not found')
+
+    } catch(err) {
+        console.log(err)
+    }
 })
 
 

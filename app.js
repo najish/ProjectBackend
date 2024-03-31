@@ -11,6 +11,7 @@ const database = require('./config/database.js')
 const User = require('./models/user.js')
 const userRouter = require('./routes/userRouter.js')
 const loginRouter = require('./routes/authentication/login.js')
+const studentRouter = require('./routes/studentRouter.js')
 const PORT = process.env.PORT || 3001
 
 
@@ -32,6 +33,7 @@ sessionOption = {
 app.use('/authenticate',session(sessionOption))
 app.use('/user',userRouter)
 app.use('/login',loginRouter)
+app.use('/student',studentRouter)
 
 
 app.get('/',(req,res) => {
