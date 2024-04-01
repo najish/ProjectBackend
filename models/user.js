@@ -15,12 +15,14 @@ const User = seqeulize.define('user',{
 
     email: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     
     username: {
         type: DataTypes.STRING,
-        allowNull: null
+        allowNull: null,
+        unique: true
     },
 
     password: {
