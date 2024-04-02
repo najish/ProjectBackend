@@ -68,7 +68,7 @@ function SignUp() {
 
                 <div>
                     <label htmlFor="password">Password</label>
-                    <input type='text' placeholder='password..' name='password' value={formData.password} id='password' onChange={changeHandler} />
+                    <input type='password' placeholder='password..' name='password' value={formData.password} id='password' onChange={changeHandler} />
                 </div>
                 <div>
                     <input type="submit" value='SignUp' />

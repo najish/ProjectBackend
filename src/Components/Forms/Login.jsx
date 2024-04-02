@@ -25,7 +25,9 @@ function Login() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
-        }).then(response => response.json()).then(data => console.log(data)).catch(err => console.error(err))
+        }).then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
 
         console.log(data)
     }
@@ -33,7 +35,7 @@ function Login() {
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log(formData)
-        postFormData()
+        postFormData(formData)
     }   
 
 
